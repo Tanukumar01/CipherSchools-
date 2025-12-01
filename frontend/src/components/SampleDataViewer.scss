@@ -1,0 +1,85 @@
+.sample-data-viewer {
+    @include card;
+    margin-top: $spacing-lg;
+
+    >h3 {
+        font-size: $font-size-base;
+        color: $text-secondary;
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: $font-weight-semibold;
+    }
+
+    &__table {
+        margin-bottom: $spacing-xl;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            margin-bottom: $spacing-sm;
+            color: $primary-light;
+            font-size: $font-size-lg;
+        }
+    }
+
+    &__columns {
+        margin-bottom: $spacing-md;
+
+        strong {
+            display: block;
+            margin-bottom: $spacing-sm;
+            font-size: $font-size-sm;
+            color: $text-secondary;
+        }
+
+        .column-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $spacing-xs;
+        }
+
+        .column-badge {
+            background: $bg-tertiary;
+            color: $text-primary;
+            padding: $spacing-xs $spacing-sm;
+            border-radius: $border-radius-sm;
+            font-size: $font-size-xs;
+            font-family: $font-family-mono;
+        }
+    }
+
+    &__sample {
+        strong {
+            display: block;
+            margin-bottom: $spacing-sm;
+            font-size: $font-size-sm;
+            color: $text-secondary;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: $font-size-xs;
+
+            th,
+            td {
+                padding: $spacing-xs $spacing-sm;
+                text-align: left;
+                border: 1px solid $border-color;
+            }
+
+            th {
+                background: $bg-tertiary;
+                font-weight: $font-weight-semibold;
+                color: $text-primary;
+            }
+
+            td {
+                color: $text-secondary;
+            }
+        }
+    }
+}

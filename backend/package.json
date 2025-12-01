@@ -1,0 +1,28 @@
+{
+  "name": "ciphersql-backend",
+  "version": "1.0.0",
+  "description": "Backend API for CipherSQLStudio - SQL learning platform with sandboxed execution",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed/seed_mongo.js",
+    "test": "node --experimental-test-runner test/**/*.test.js"
+  },
+  "keywords": ["sql", "learning", "sandbox", "education"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "mongoose": "^8.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.1",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

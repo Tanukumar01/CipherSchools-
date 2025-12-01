@@ -1,0 +1,114 @@
+.hint-ui {
+    @include card;
+
+    &__controls {
+        h3 {
+            margin-bottom: $spacing-md;
+            font-size: $font-size-lg;
+        }
+    }
+
+    &__level-selector {
+        margin-bottom: $spacing-md;
+
+        label {
+            display: block;
+            margin-bottom: $spacing-sm;
+            font-size: $font-size-sm;
+            color: $text-secondary;
+            font-weight: $font-weight-medium;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: $spacing-md;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: $spacing-xs;
+            cursor: pointer;
+            color: $text-primary;
+            font-size: $font-size-sm;
+
+            input[type="radio"] {
+                cursor: pointer;
+            }
+
+            span {
+                user-select: none;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: $spacing-sm $spacing-lg;
+        background: linear-gradient(135deg, $primary-color, $primary-light);
+        color: white;
+        border: none;
+        border-radius: $border-radius-md;
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        cursor: pointer;
+        @include transition;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: $shadow-lg;
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    &__content {
+        margin-top: $spacing-lg;
+        padding-top: $spacing-lg;
+        border-top: 1px solid $border-color;
+    }
+
+    &__section {
+        margin-bottom: $spacing-lg;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            font-size: $font-size-base;
+            margin-bottom: $spacing-sm;
+            color: $primary-light;
+        }
+
+        p {
+            color: $text-primary;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        ol {
+            margin: 0;
+            padding-left: $spacing-lg;
+            color: $text-primary;
+
+            li {
+                margin-bottom: $spacing-xs;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    &__error {
+        margin-top: $spacing-md;
+        padding: $spacing-md;
+        background: rgba($error-color, 0.1);
+        border: 1px solid $error-color;
+        border-radius: $border-radius-sm;
+        color: $error-color;
+        font-size: $font-size-sm;
+    }
+}

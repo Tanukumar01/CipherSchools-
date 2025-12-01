@@ -1,0 +1,157 @@
+.assignment-attempt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .loading-screen,
+    .error-screen {
+        @include flex-center;
+        @include flex-column;
+        gap: $spacing-md;
+        padding: $spacing-2xl;
+        flex: 1;
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid $bg-tertiary;
+            border-top-color: $primary-light;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        p {
+            color: $text-muted;
+        }
+
+        button {
+            padding: $spacing-sm $spacing-lg;
+            background: $primary-color;
+            color: white;
+            border: none;
+            border-radius: $border-radius-md;
+            font-weight: $font-weight-semibold;
+            cursor: pointer;
+            @include transition;
+
+            &:hover {
+                background: $primary-light;
+            }
+        }
+    }
+
+    &__header {
+        @include flex-between;
+        padding: $spacing-lg 0;
+        margin-bottom: $spacing-lg;
+        border-bottom: 1px solid $border-color;
+
+        h2 {
+            margin: 0;
+            font-size: $font-size-xl;
+        }
+
+        .back-button {
+            @include button-reset;
+            color: $primary-light;
+            font-weight: $font-weight-medium;
+            padding: $spacing-sm $spacing-md;
+            border-radius: $border-radius-sm;
+            @include transition;
+
+            &:hover {
+                background: $bg-secondary;
+            }
+        }
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: $spacing-lg;
+        flex: 1;
+        overflow: hidden;
+
+        @include respond-below($breakpoint-md) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+            overflow-y: auto;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+        overflow-y: auto;
+        @include custom-scrollbar;
+
+        @include respond-below($breakpoint-md) {
+            overflow-y: visible;
+        }
+    }
+
+    &__workspace {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+        overflow: hidden;
+
+        @include respond-below($breakpoint-md) {
+            overflow: visible;
+        }
+    }
+
+    &__editor-section {
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            @include flex-between;
+            margin-bottom: $spacing-md;
+
+            h3 {
+                margin: 0;
+                font-size: $font-size-lg;
+            }
+        }
+
+        .run-button {
+            padding: $spacing-sm $spacing-lg;
+            background: linear-gradient(135deg, $success-color, #14b8a6);
+            color: white;
+            border: none;
+            border-radius: $border-radius-md;
+            font-weight: $font-weight-semibold;
+            font-size: $font-size-sm;
+            cursor: pointer;
+            @include transition;
+
+            &:hover:not(:disabled) {
+                transform: translateY(-2px);
+                box-shadow: $shadow-md;
+            }
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &__results-section {
+        flex: 1;
+        min-height: 300px;
+        overflow: hidden;
+
+        @include respond-below($breakpoint-md) {
+            min-height: 400px;
+        }
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

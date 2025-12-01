@@ -1,0 +1,88 @@
+/**
+ * SCSS MIXINS
+ * 
+ * Reusable style patterns
+ */
+
+// Responsive breakpoints
+@mixin respond-above($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin respond-below($breakpoint) {
+    @media (max-width: calc(#{$breakpoint} - 1px)) {
+        @content;
+    }
+}
+
+// Flexbox utilities
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Card pattern
+@mixin card {
+    background: $bg-secondary;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+    box-shadow: $shadow-md;
+}
+
+// Button reset
+@mixin button-reset {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+// Scrollbar styling
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bg-secondary;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $bg-tertiary;
+        border-radius: $border-radius-sm;
+
+        &:hover {
+            background: $border-color;
+        }
+    }
+}
+
+// Truncate text
+@mixin truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Transition
+@mixin transition($properties: all, $duration: 0.2s, $timing: ease) {
+    transition: $properties $duration $timing;
+}

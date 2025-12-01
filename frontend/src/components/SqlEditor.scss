@@ -1,0 +1,13 @@
+.sql-editor {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    background: #1e1e1e; // Monaco dark theme background
+
+    &__loading {
+        @include flex-center;
+        height: 400px;
+        color: $text-muted;
+        font-size: $font-size-sm;
+    }
+}

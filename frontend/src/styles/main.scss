@@ -1,0 +1,47 @@
+/**
+ * MAIN STYLESHEET
+ * 
+ * Entry point for all styles
+ */
+
+// 1. Variables and mixins (imported globally via vite.config.js)
+// @import './variables';
+// @import './mixins';
+
+// 2. Base styles
+@import './base';
+
+// 3. Layout
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background: $bg-secondary;
+    border-bottom: 1px solid $border-color;
+    padding: $spacing-md $spacing-xl;
+    @include flex-between;
+
+    &__title {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        background: linear-gradient(135deg, $primary-light, $info-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+    }
+}
+
+.app-main {
+    flex: 1;
+    padding: $spacing-xl;
+
+    @include respond-below($breakpoint-md) {
+        padding: $spacing-md;
+    }
+}
+
+// Components will be added below

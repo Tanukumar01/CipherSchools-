@@ -1,0 +1,107 @@
+/**
+ * BASE STYLES
+ * 
+ * CSS reset and global styles
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: 1.6;
+    color: $text-primary;
+    background: $bg-primary;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: $spacing-md;
+}
+
+h1 {
+    font-size: $font-size-3xl;
+}
+
+h2 {
+    font-size: $font-size-2xl;
+}
+
+h3 {
+    font-size: $font-size-xl;
+}
+
+h4 {
+    font-size: $font-size-lg;
+}
+
+// Links
+a {
+    color: $primary-light;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+        color: $primary-color;
+        text-decoration: underline;
+    }
+}
+
+// Buttons
+button {
+    font-family: $font-family-base;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// Code
+code,
+pre {
+    font-family: $font-family-mono;
+}
+
+// Utility classes
+.text-muted {
+    color: $text-muted;
+}
+
+.text-error {
+    color: $error-color;
+}
+
+.text-success {
+    color: $success-color;
+}

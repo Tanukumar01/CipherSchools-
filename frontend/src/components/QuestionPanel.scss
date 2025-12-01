@@ -1,0 +1,62 @@
+.question-panel {
+    @include card;
+
+    &__loading {
+        @include flex-center;
+        padding: $spacing-2xl;
+        color: $text-muted;
+    }
+
+    &__header {
+        @include flex-between;
+        align-items: flex-start;
+        margin-bottom: $spacing-lg;
+        gap: $spacing-md;
+
+        h2 {
+            margin: 0;
+            flex: 1;
+        }
+    }
+
+    &__content {
+        h3 {
+            font-size: $font-size-base;
+            color: $text-secondary;
+            margin-bottom: $spacing-sm;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: $font-weight-semibold;
+        }
+
+        p {
+            color: $text-primary;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}
+
+.difficulty {
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-md;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &--easy {
+        background: rgba($success-color, 0.2);
+        color: $success-color;
+    }
+
+    &--medium {
+        background: rgba($warning-color, 0.2);
+        color: $warning-color;
+    }
+
+    &--hard {
+        background: rgba($error-color, 0.2);
+        color: $error-color;
+    }
+}
